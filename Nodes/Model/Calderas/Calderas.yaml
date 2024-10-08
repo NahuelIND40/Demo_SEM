@@ -1,0 +1,43 @@
+Name: Calderas
+Type: FolderType
+Children:
+- Name: Caldera1
+  Type: BaseObjectType
+  Children:
+  - Name: Presión
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Caudal
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Temp
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Status
+    Id: g=7712bf36dcc5a4c9d8de5d1acb8887d3
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Alarm
+    Id: g=835173c3e4b48984e4268689e4d7d357
+    Type: BaseDataVariableType
+    DataType: Boolean
+- Name: Caldera2
+  Type: BaseObjectType
+  Children:
+  - Name: Presión
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Caudal
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Temp
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Status
+    Id: g=8e882c88a3efdbfde4e2daeae4ad5aa3
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Alarm
+    Id: g=45c8a4103294271faf00ebb08906f1a9
+    Type: BaseDataVariableType
+    DataType: Boolean

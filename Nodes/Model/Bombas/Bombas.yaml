@@ -1,0 +1,23 @@
+Name: Bombas
+Type: FolderType
+Children:
+- Name: Bomba1
+  Type: BaseObjectType
+  Children:
+  - Name: Status
+    Id: g=2b07c50492696c95c22f5cf1ad06c240
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Capacidad
+    Type: BaseDataVariableType
+    DataType: Int32
+- Name: Bomba2
+  Type: BaseObjectType
+  Children:
+  - Name: Status
+    Id: g=ac5f25243f29c0ccaf66fa5717fd4380
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Capacidad
+    Type: BaseDataVariableType
+    DataType: Int32

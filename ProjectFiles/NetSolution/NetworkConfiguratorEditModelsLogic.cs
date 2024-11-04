@@ -5,6 +5,8 @@ using FTOptix.NetLogic;
 using System.Linq;
 using FTOptix.UI;
 using FTOptix.SerialPort;
+using FTOptix.S7TiaProfinet;
+using FTOptix.Alarm;
 #endregion
 
 public class NetworkConfiguratorEditModelsLogic : BaseNetLogic

@@ -5,6 +5,8 @@ using FTOptix.HMIProject;
 using UAManagedCore;
 using FTOptix.UI;
 using FTOptix.NetLogic;
+using FTOptix.S7TiaProfinet;
+using FTOptix.Alarm;
 #endregion
 
 public class ClockLogic : BaseNetLogic

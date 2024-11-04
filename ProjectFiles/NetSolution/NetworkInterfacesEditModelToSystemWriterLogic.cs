@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using FTOptix.UI;
 using FTOptix.SerialPort;
+using FTOptix.S7TiaProfinet;
+using FTOptix.Alarm;
 #endregion
 
 public class NetworkInterfacesEditModelToSystemWriterLogic : BaseNetLogic

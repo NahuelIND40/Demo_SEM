@@ -2,6 +2,8 @@
 using UAManagedCore;
 using FTOptix.NetLogic;
 using FTOptix.System;
+using FTOptix.S7TiaProfinet;
+using FTOptix.Alarm;
 #endregion
 
 public class IncomingConnectionApprovalLogic : BaseNetLogic

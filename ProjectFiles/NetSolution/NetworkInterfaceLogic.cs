@@ -4,6 +4,8 @@ using FTOptix.UI;
 using UAManagedCore;
 using FTOptix.NetLogic;
 using FTOptix.SerialPort;
+using FTOptix.S7TiaProfinet;
+using FTOptix.Alarm;
 #endregion
 
 public class NetworkInterfaceLogic : BaseNetLogic

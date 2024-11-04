@@ -3,6 +3,8 @@ using System.IO;
 using FTOptix.NetLogic;
 using FTOptix.UI;
 using FTOptix.SerialPort;
+using FTOptix.S7TiaProfinet;
+using FTOptix.Alarm;
 #endregion
 
 public class FTOptixStudioVersionLogic : BaseNetLogic

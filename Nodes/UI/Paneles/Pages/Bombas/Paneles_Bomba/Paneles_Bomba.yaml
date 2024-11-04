@@ -1216,6 +1216,17 @@ Children:
     - Name: ShowFlow
       Type: BaseDataVariableType
       DataType: Boolean
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2_ON"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
     - Name: Width
       Type: BaseVariableType
       DataType: Size
@@ -2245,11 +2256,16 @@ Children:
     ModellingRule: Optional
     Value: 80.0
   - Name: 'BOMB:ON'
-    Type: Button
+    Type: MomentaryButton
     Children:
+    - Name: Active
+      Type: BaseDataVariableType
+      DataType: Boolean
+      AccessLevel: Read
     - Name: Text
       Type: BaseDataVariableType
       DataType: LocalizedText
+      ModellingRule: Optional
       Value: {"LocaleId":"es-ES","Text":"START"}
     - Name: Width
       Type: BaseVariableType
@@ -2276,7 +2292,7 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 10.0
-    - Name: EventoMouseClickHandler1
+    - Name: MouseClickEventHandler1
       Type: EventHandler
       Children:
       - Name: ListenEventType
@@ -2309,12 +2325,10 @@ Children:
               Type: BaseDataVariableType
               DataType: VariablePointer
               Description: {"NamespaceIndex":3,"TextId":"SetVariableToModifyDescription"}
-              Value: {"IdType":2,"Id":"cfb4c61adfccd61410814885baa2a2f8","Namespace":18}
             - Name: Value
               Type: BaseDataVariableType
-              DataType: Boolean
+              DataType: BaseDataType
               Description: {"NamespaceIndex":3,"TextId":"SetValueDescription"}
-              Value: true
             - Name: ArrayIndex
               Type: BaseDataVariableType
               DataType: UInt32
@@ -2348,11 +2362,16 @@ Children:
           Type: PropertyType
           DataType: UInt16
   - Name: 'BOMB:OFF'
-    Type: Button
+    Type: MomentaryButton
     Children:
+    - Name: Active
+      Type: BaseDataVariableType
+      DataType: Boolean
+      AccessLevel: Read
     - Name: Text
       Type: BaseDataVariableType
       DataType: LocalizedText
+      ModellingRule: Optional
       Value: {"LocaleId":"es-ES","Text":"STOP"}
     - Name: Width
       Type: BaseVariableType
@@ -2369,22 +2388,22 @@ Children:
       DataType: String
       ModellingRule: Optional
       Value: "BorderedCircular"
-    - Name: LeftMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 90.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 10.0
     - Name: BackgroundColor
       Type: BaseDataVariableType
       DataType: Color
       ModellingRule: Optional
       Value: "#f82323"
-    - Name: EventoMouseClickHandler1
+    - Name: LeftMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 100.0
+    - Name: TopMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+    - Name: MouseClickEventHandler1
       Type: EventHandler
       Children:
       - Name: ListenEventType
@@ -2417,10 +2436,9 @@ Children:
               Type: BaseDataVariableType
               DataType: VariablePointer
               Description: {"NamespaceIndex":3,"TextId":"SetVariableToModifyDescription"}
-              Value: {"IdType":2,"Id":"b74f38f29d2b6b9a42087a9e55719b6d","Namespace":18}
             - Name: Value
               Type: BaseDataVariableType
-              DataType: Boolean
+              DataType: BaseDataType
               Description: {"NamespaceIndex":3,"TextId":"SetValueDescription"}
             - Name: ArrayIndex
               Type: BaseDataVariableType
@@ -2479,7 +2497,7 @@ Children:
       - Name: DynamicLink
         Type: DynamicLink
         DataType: NodePath
-        Value: "/Objects/Demo_Sem/Model/Variables_Bomba/Bomba1/Capacidad"
+        Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2/CAP"
         Children:
         - Name: Mode
           Type: BaseVariableType
@@ -2524,3 +2542,127 @@ Children:
       DataType: TextHorizontalAlignment
       ModellingRule: Optional
       Value: 1
+    - Name: Style
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Default"
+- Name: Vaciado
+  Id: g=815ab558b784520dfd55a1de9999448f
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 80.0
+  - Name: Height
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 80.0
+  - Name: 'BOMB:DISCH'
+    Type: Button
+    Children:
+    - Name: Text
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"es-ES","Text":"Vaciado"}
+    - Name: LeftMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 6.0
+    - Name: TopMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+    - Name: Width
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 70.0
+    - Name: Height
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 60.0
+    - Name: Style
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "BorderedCircular"
+    - Name: BackgroundColor
+      Type: BaseDataVariableType
+      DataType: Color
+      ModellingRule: Optional
+      Value: "#ffc80a"
+    - Name: MouseClickEventHandler2
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+      - Name: MethodsToCall
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Type: BaseObjectType
+          Children:
+          - Name: ns=3;ObjectPointer
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=3;Method
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Toggle"
+          - Name: InputArguments
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":3,"TextId":"ToggleVariableToModifyDescription"}
+              Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2/DISCH"
+            - Name: ArrayIndex
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":3,"TextId":"ToggleArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+      - Name: EventArguments
+        Type: MouseClickEvent
+        Children:
+        - Name: EventId
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Type: PropertyType
+          DataType: UInt16

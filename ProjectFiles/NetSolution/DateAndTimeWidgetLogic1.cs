@@ -7,17 +7,9 @@ using FTOptix.UI;
 using System;
 using System.Collections.Generic;
 using UAManagedCore;
-using FTOptix.SerialPort;
-using FTOptix.RAEtherNetIP;
-using FTOptix.CommunicationDriver;
-using FTOptix.WebUI;
-using FTOptix.SQLiteStore;
-using FTOptix.Store;
-using FTOptix.DataLogger;
-using FTOptix.ODBCStore;
 #endregion
 
-public class DateAndTimeWidgetLogic : BaseNetLogic
+public class DateAndTimeWidgetLogic1 : BaseNetLogic
 {
     private const string LOGGING_CATEGORY = nameof(DateAndTimeWidgetLogic);
 
@@ -66,27 +58,34 @@ public class DateAndTimeWidgetLogic : BaseNetLogic
     #region Time Synchronization Mode
     private void InitializeSynchronizationModeRadioButtons()
     {
-        synchAutoModeOption = Owner.Get<RadioButton>("SynchronizationAutoMode");
+        RowLayout modesLayout = Owner.Get<RowLayout>("ModesLayout");
+        if (modesLayout == null)
+        {
+            Log.Error(LOGGING_CATEGORY, "ModesLayout for radio button not found.");
+            return;
+        }
+
+        synchAutoModeOption = modesLayout.Get<RadioButton>("SynchronizationAutoMode");
         if (synchAutoModeOption == null)
         {
             Log.Error(LOGGING_CATEGORY, "SynchronizationAutoMode radio button not found.");
             return;
         }
 
-        RadioButton synchManualModeOption = Owner.Get<RadioButton>("SynchronizationManualMode");
-        if (synchManualModeOption == null)
+        RadioButton synchManualModeOrPLCOption = modesLayout.Get<RadioButton>("SynchronizationManualorPLCMode");
+        if (synchManualModeOrPLCOption == null)
         {
             Log.Error(LOGGING_CATEGORY, "SynchronizationManualMode radio button not found.");
             return;
         }
 
         synchAutoModeOption.Checked = false;
-        synchManualModeOption.Checked = false;
+        synchManualModeOrPLCOption.Checked = false;
 
         if (systemNode.DateAndTime.SynchronizationMode == TimeSynchronizationMode.Auto)
             synchAutoModeOption.Checked = true;
-        else if (systemNode.DateAndTime.SynchronizationMode == TimeSynchronizationMode.Manual)
-            synchManualModeOption.Checked = true;
+        else if (systemNode.DateAndTime.SynchronizationMode == TimeSynchronizationMode.Manual || systemNode.DateAndTime.SynchronizationMode == TimeSynchronizationMode.PLC)
+            synchManualModeOrPLCOption.Checked = true;
     }
     #endregion
 
@@ -182,6 +181,14 @@ public class DateAndTimeWidgetLogic : BaseNetLogic
     }
     #endregion
 
+    private bool IsSynchronizationModeAvailable(TimeSynchronizationMode synchMode)
+    {
+        if (Array.IndexOf((Array)systemNode.DateAndTime.AvailableSynchronizationModes, synchMode) != -1)
+            return true;
+
+        return false;
+    }
+
     [ExportMethod]
     public void Reboot_Device()
     {
@@ -211,9 +218,25 @@ public class DateAndTimeWidgetLogic : BaseNetLogic
         }
 
         if (synchAutoModeOption.Checked)
+        {
             systemNode.DateAndTime.SynchronizationMode = TimeSynchronizationMode.Auto;
+        }
         else
-            systemNode.DateAndTime.SynchronizationMode = TimeSynchronizationMode.Manual;
+        {
+            if (IsSynchronizationModeAvailable(TimeSynchronizationMode.PLC))
+            {
+                systemNode.DateAndTime.SynchronizationMode = TimeSynchronizationMode.PLC;
+            }
+            else if (IsSynchronizationModeAvailable(TimeSynchronizationMode.Manual))
+            {
+                systemNode.DateAndTime.SynchronizationMode = TimeSynchronizationMode.Manual;
+
+            }
+            else
+            {
+                // Invalid Time Synchronization Mode
+            }
+        }
     }
 
     [ExportMethod]

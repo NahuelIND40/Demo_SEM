@@ -39,6 +39,17 @@ Children:
         Type: BaseDataVariableType
         DataType: Int32
         Value: 100
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1/MAX"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
       - Name: borderElement
         Type: Image
         Children:
@@ -252,6 +263,17 @@ Children:
         Type: BaseDataVariableType
         DataType: Boolean
         Value: true
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1/DISCH"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
       - Name: borderElement
         Type: Image
         Children:
@@ -476,7 +498,7 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba1/Capacidad"
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1/CAP"
           Children:
           - Name: Mode
             Type: BaseVariableType
@@ -489,7 +511,7 @@ Children:
       - Name: MaxLevel
         Type: BaseDataVariableType
         DataType: Double
-        Value: 100.0
+        Value: 1500.0
       - Name: Equipment_x5F_Storage_x5F_Tank_x5F_Assembled_x5F_Outline
         Type: Image
         Children:
@@ -583,13 +605,7 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba1/Status"
-          Children:
-          - Name: Mode
-            Type: BaseVariableType
-            DataType: DynamicLinkMode
-            ModellingRule: Optional
-            Value: 2
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1_ON"
       - Name: _x32_003_x5F_Standard_x5F_Pump_x5F_Outline
         Type: Image
         Children:
@@ -819,7 +835,7 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba1/Status"
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1_ON"
           Children:
           - Name: Mode
             Type: BaseVariableType
@@ -955,7 +971,7 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba1/Status"
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1_ON"
           Children:
           - Name: Mode
             Type: BaseVariableType
@@ -1068,6 +1084,16 @@ Children:
            "highestIgnoredVersion": 0
           }
          }
+      - Name: LeftMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 240.0
+      - Name: TopMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 100.0
     - Name: Capacidad_Label
       Type: Label
     - Name: LeftMargin
@@ -1080,17 +1106,167 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 10.0
-  - Name: On_Off1
-    Type: On_Off
+  - Name: Capacidad1
+    Type: Capacidad
     Children:
-    - Name: 'BOMB:ON'
-      Type: Button
+    - Name: Valor_Cap
+      Type: TextBox
       Children:
       - Name: Text
         Type: BaseDataVariableType
         DataType: LocalizedText
-        Value: {"LocaleId":"es-ES","Text":"START"}
-      - Name: EventoMouseClickHandler1
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1/CAP"
+      - Name: Style
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+      - Name: Visible
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+    - Name: LeftMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 490.0
+    - Name: TopMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 240.0
+  - Name: Vaciado1
+    Type: Vaciado
+    Children:
+    - Name: 'BOMB:DISCH'
+      Type: Button
+      Children:
+      - Name: MouseClickEventHandler2
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+        - Name: MethodsToCall
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Type: NodePointer
+              DataType: NodeId
+              Value: "/Objects/Commands/VariableCommands"
+              Children:
+              - Name: Kind
+                Type: PropertyType
+                DataType: NodeId
+                Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: Method
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Toggle"
+            - Name: InputArguments
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1/DISCH"
+              - Name: ArrayIndex
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+          - Name: MethodContainer2
+            Type: BaseObjectType
+            Children:
+            - Name: ns=3;ObjectPointer
+              Type: NodePointer
+              DataType: NodeId
+              Value: "/Objects/Commands/VariableCommands"
+              Children:
+              - Name: Kind
+                Type: PropertyType
+                DataType: NodeId
+                Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: ns=3;Method
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "SetBit"
+            - Name: InputArguments
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Description: {"NamespaceIndex":3,"TextId":"SetBitVariableToModifyDescription"}
+                Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1_ON"
+              - Name: Value
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Description: {"NamespaceIndex":3,"TextId":"SetBitValueDescription"}
+              - Name: ArrayIndex
+                Type: BaseDataVariableType
+                DataType: UInt32
+                Description: {"NamespaceIndex":3,"TextId":"SetBitArrayIndexDescription"}
+                ValueRank: ScalarOrOneDimension
+              - Name: BitIndex
+                Type: BaseDataVariableType
+                DataType: UInt32
+                Description: {"NamespaceIndex":3,"TextId":"SetBitBitIndexDescription"}
+                ValueRank: ScalarOrOneDimension
+        - Name: EventArguments
+          Type: MouseClickEvent
+          Children:
+          - Name: EventId
+            Type: PropertyType
+            DataType: ByteString
+          - Name: EventType
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceNode
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceName
+            Type: PropertyType
+            DataType: String
+          - Name: Time
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: ReceiveTime
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: Message
+            Type: PropertyType
+            DataType: LocalizedText
+          - Name: Severity
+            Type: PropertyType
+            DataType: UInt16
+    - Name: LeftMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 370.0
+    - Name: TopMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 210.0
+  - Name: On_Off1
+    Type: On_Off
+    Children:
+    - Name: 'BOMB:ON'
+      Type: MomentaryButton
+      Children:
+      - Name: Active
+        Type: BaseDataVariableType
+        DataType: Boolean
+        AccessLevel: Read
+      - Name: MouseClickEventHandler1
         Type: EventHandler
         Children:
         - Name: ListenEventType
@@ -1122,7 +1298,7 @@ Children:
               - Name: VariableToModify
                 Type: BaseDataVariableType
                 DataType: VariablePointer
-                Value: "/Objects/Demo_Sem/Model/Bombas/Bomba1/Status"
+                Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1_ON"
               - Name: Value
                 Type: BaseDataVariableType
                 DataType: Boolean
@@ -1159,13 +1335,13 @@ Children:
             Type: PropertyType
             DataType: UInt16
     - Name: 'BOMB:OFF'
-      Type: Button
+      Type: MomentaryButton
       Children:
-      - Name: Text
+      - Name: Active
         Type: BaseDataVariableType
-        DataType: LocalizedText
-        Value: {"LocaleId":"es-ES","Text":"STOP"}
-      - Name: EventoMouseClickHandler1
+        DataType: Boolean
+        AccessLevel: Read
+      - Name: MouseClickEventHandler1
         Type: EventHandler
         Children:
         - Name: ListenEventType
@@ -1197,7 +1373,7 @@ Children:
               - Name: VariableToModify
                 Type: BaseDataVariableType
                 DataType: VariablePointer
-                Value: "/Objects/Demo_Sem/Model/Bombas/Bomba1/Status"
+                Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA1_ON"
               - Name: Value
                 Type: BaseDataVariableType
                 DataType: Boolean
@@ -1236,36 +1412,12 @@ Children:
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 200.0
+      Value: 190.0
     - Name: TopMargin
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 10.0
-  - Name: Capacidad1
-    Type: Capacidad
-    Children:
-    - Name: Valor_Cap
-      Type: TextBox
-      Children:
-      - Name: Text
-        Type: BaseDataVariableType
-        DataType: LocalizedText
-        Children:
-        - Name: DynamicLink
-          Type: DynamicLink
-          DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba1/Capacidad"
-    - Name: LeftMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 490.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 240.0
+      Value: 20.0
 - Name: Bomba2_Page
   Id: g=51b1b300b8d48f795cac363111ecc8d2
   Supertype: Panel
@@ -1303,6 +1455,17 @@ Children:
       - Name: LightOn
         Type: BaseDataVariableType
         DataType: Int32
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2/MAX"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
       - Name: borderElement
         Type: Image
         Children:
@@ -1529,6 +1692,17 @@ Children:
         Type: BaseDataVariableType
         DataType: Boolean
         Value: true
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2/DISCH"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
       - Name: borderElement
         Type: Image
         Children:
@@ -1753,7 +1927,7 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba2/Capacidad"
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2/CAP"
           Children:
           - Name: Mode
             Type: BaseVariableType
@@ -1766,7 +1940,7 @@ Children:
       - Name: MaxLevel
         Type: BaseDataVariableType
         DataType: Double
-        Value: 100.0
+        Value: 3000.0
       - Name: Equipment_x5F_Storage_x5F_Tank_x5F_Assembled_x5F_Outline
         Type: Image
         Children:
@@ -1860,13 +2034,7 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba2/Status"
-          Children:
-          - Name: Mode
-            Type: BaseVariableType
-            DataType: DynamicLinkMode
-            ModellingRule: Optional
-            Value: 2
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2_ON"
       - Name: _x32_003_x5F_Standard_x5F_Pump_x5F_Outline
         Type: Image
         Children:
@@ -2096,7 +2264,7 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba2/Status"
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2_ON"
           Children:
           - Name: Mode
             Type: BaseVariableType
@@ -2242,7 +2410,7 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba2/Status"
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2_ON"
           Children:
           - Name: Mode
             Type: BaseVariableType
@@ -2367,17 +2535,121 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 10.0
-  - Name: On_Off1
-    Type: On_Off
+  - Name: Capacidad1
+    Type: Capacidad
     Children:
-    - Name: 'BOMB:ON'
-      Type: Button
+    - Name: Valor_Cap
+      Type: TextBox
       Children:
       - Name: Text
         Type: BaseDataVariableType
         DataType: LocalizedText
-        Value: {"LocaleId":"es-ES","Text":"START"}
-      - Name: EventoMouseClickHandler1
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2/CAP"
+    - Name: LeftMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 490.0
+    - Name: TopMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 240.0
+  - Name: Vaciado1
+    Type: Vaciado
+    Children:
+    - Name: 'BOMB:DISCH'
+      Type: Button
+      Children:
+      - Name: MouseClickEventHandler2
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+        - Name: MethodsToCall
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Type: NodePointer
+              DataType: NodeId
+              Value: "/Objects/Commands/VariableCommands"
+              Children:
+              - Name: Kind
+                Type: PropertyType
+                DataType: NodeId
+                Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: Method
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Toggle"
+            - Name: InputArguments
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2/DISCH"
+              - Name: ArrayIndex
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+        - Name: EventArguments
+          Type: MouseClickEvent
+          Children:
+          - Name: EventId
+            Type: PropertyType
+            DataType: ByteString
+          - Name: EventType
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceNode
+            Type: PropertyType
+            DataType: NodeId
+          - Name: SourceName
+            Type: PropertyType
+            DataType: String
+          - Name: Time
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: ReceiveTime
+            Type: PropertyType
+            DataType: UtcTime
+          - Name: Message
+            Type: PropertyType
+            DataType: LocalizedText
+          - Name: Severity
+            Type: PropertyType
+            DataType: UInt16
+    - Name: LeftMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 367.0
+    - Name: TopMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 207.0
+  - Name: On_Off1
+    Type: On_Off
+    Children:
+    - Name: 'BOMB:ON'
+      Type: MomentaryButton
+      Children:
+      - Name: Active
+        Type: BaseDataVariableType
+        DataType: Boolean
+        AccessLevel: Read
+      - Name: MouseClickEventHandler1
         Type: EventHandler
         Children:
         - Name: ListenEventType
@@ -2409,7 +2681,7 @@ Children:
               - Name: VariableToModify
                 Type: BaseDataVariableType
                 DataType: VariablePointer
-                Value: "/Objects/Demo_Sem/Model/Bombas/Bomba2/Status"
+                Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2_ON"
               - Name: Value
                 Type: BaseDataVariableType
                 DataType: Boolean
@@ -2446,13 +2718,13 @@ Children:
             Type: PropertyType
             DataType: UInt16
     - Name: 'BOMB:OFF'
-      Type: Button
+      Type: MomentaryButton
       Children:
-      - Name: Text
+      - Name: Active
         Type: BaseDataVariableType
-        DataType: LocalizedText
-        Value: {"LocaleId":"es-ES","Text":"STOP"}
-      - Name: EventoMouseClickHandler1
+        DataType: Boolean
+        AccessLevel: Read
+      - Name: MouseClickEventHandler1
         Type: EventHandler
         Children:
         - Name: ListenEventType
@@ -2484,7 +2756,7 @@ Children:
               - Name: VariableToModify
                 Type: BaseDataVariableType
                 DataType: VariablePointer
-                Value: "/Objects/Demo_Sem/Model/Bombas/Bomba2/Status"
+                Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2_ON"
               - Name: Value
                 Type: BaseDataVariableType
                 DataType: Boolean
@@ -2523,36 +2795,12 @@ Children:
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 200.0
+      Value: 190.0
     - Name: TopMargin
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 10.0
-  - Name: Capacidad1
-    Type: Capacidad
-    Children:
-    - Name: Valor_Cap
-      Type: TextBox
-      Children:
-      - Name: Text
-        Type: BaseDataVariableType
-        DataType: LocalizedText
-        Children:
-        - Name: DynamicLink
-          Type: DynamicLink
-          DataType: NodePath
-          Value: "/Objects/Demo_Sem/Model/Bombas/Bomba2/Capacidad"
-    - Name: LeftMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 490.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 240.0
+      Value: 20.0
 - Name: Bombas_Page
   Id: g=3b4e70e6034570bc26072b947eb9f283
   Supertype: Panel

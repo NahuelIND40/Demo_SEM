@@ -3,6 +3,13 @@ using UAManagedCore;
 using FTOptix.NetLogic;
 using FTOptix.UI;
 using FTOptix.System;
+using FTOptix.RAEtherNetIP;
+using FTOptix.CommunicationDriver;
+using FTOptix.WebUI;
+using FTOptix.SQLiteStore;
+using FTOptix.Store;
+using FTOptix.DataLogger;
+using FTOptix.ODBCStore;
 #endregion
 
 public class ConnectionSwitchLogic : BaseNetLogic

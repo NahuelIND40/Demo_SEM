@@ -1,0 +1,95 @@
+Name: DataTypes
+Type: FolderType
+Children:
+- Class: DataType
+  Name: BOMB_PARAM
+  Id: g=e2e182bf31aabf857a4037f02a8c7c86
+  Supertype: Structure
+  StructDefinition: 
+   {
+    "Name": "BOMB_PARAM",
+    "DataType": {
+     "IdType": 2,
+     "Id": "e2e182bf31aabf857a4037f02a8c7c86",
+     "Namespace": 18
+    },
+    "Fields": [{
+      "Name": "CAP",
+      "DataType": {
+       "Id": 6
+      }
+     },{
+      "Name": "DISCH",
+      "DataType": {
+       "Id": 1
+      }
+     },{
+      "Name": "MAX",
+      "DataType": {
+       "Id": 1
+      }
+     },{
+      "Name": "START",
+      "DataType": {
+       "Id": 1
+      }
+     },{
+      "Name": "STOP",
+      "DataType": {
+       "Id": 1
+      }
+     }]
+   }
+  DisplayName: {"LocaleId":"","Text":"BOMB_PARAM"}
+  Children:
+  - Name: ns=0;Default Binary
+    Type: DataTypeEncodingType
+    ModellingRule: None
+    DisplayName: {"LocaleId":"","Text":"Default Binary"}
+    ReferenceType: HasEncoding
+- Class: DataType
+  Name: TIMER
+  Id: g=725d524876a793bccd97d75f1cd45f8f
+  Supertype: Structure
+  StructDefinition: 
+   {
+    "Name": "TIMER",
+    "DataType": {
+     "IdType": 2,
+     "Id": "725d524876a793bccd97d75f1cd45f8f",
+     "Namespace": 18
+    },
+    "Fields": [{
+      "Name": "ACC",
+      "DataType": {
+       "Id": 6
+      }
+     },{
+      "Name": "DN",
+      "DataType": {
+       "Id": 1
+      }
+     },{
+      "Name": "EN",
+      "DataType": {
+       "Id": 1
+      }
+     },{
+      "Name": "PRE",
+      "DataType": {
+       "Id": 6
+      }
+     },{
+      "Name": "TT",
+      "DataType": {
+       "Id": 1
+      }
+     }]
+   }
+  DisplayName: {"LocaleId":"","Text":"TIMER"}
+  Children:
+  - Name: ns=0;Default Binary
+    Type: DataTypeEncodingType
+    ModellingRule: None
+    DisplayName: {"LocaleId":"","Text":"Default Binary"}
+    ReferenceType: HasEncoding

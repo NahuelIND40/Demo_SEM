@@ -2,6 +2,13 @@
 using UAManagedCore;
 using FTOptix.System;
 using FTOptix.NetLogic;
+using FTOptix.RAEtherNetIP;
+using FTOptix.CommunicationDriver;
+using FTOptix.WebUI;
+using FTOptix.SQLiteStore;
+using FTOptix.Store;
+using FTOptix.DataLogger;
+using FTOptix.ODBCStore;
 #endregion
 
 public class IncomingConnectionReceiverLogic : BaseNetLogic

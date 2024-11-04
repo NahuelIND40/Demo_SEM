@@ -74,13 +74,13 @@ Project:
    Module: FTOptix.System.Net
    Version: 2.0
   19:
-   Uri: 'urn:FTOptix:CommunicationDriver'
-   Module: FTOptix.CommunicationDriver
-   Version: 2.1
+   Uri: 'urn:FTOptix:Alarm'
+   Module: FTOptix.Alarm
+   Version: 4.0
   20:
-   Uri: 'urn:FTOptix:CommunicationDriver:Net'
-   Module: FTOptix.CommunicationDriver.Net
-   Version: 2.1
+   Uri: 'urn:FTOptix:Alarm:Net'
+   Module: FTOptix.Alarm.Net
+   Version: 1.2
   21:
    Uri: 'urn:FTOptix:RAEtherNetIP'
    Module: FTOptix.RAEtherNetIP
@@ -121,15 +121,23 @@ Project:
    Uri: 'urn:FTOptix:SQLiteStore:Net'
    Module: FTOptix.SQLiteStore.Net
    Version: 1.0
+  31:
+   Uri: 'urn:FTOptix:CommunicationDriver'
+   Module: FTOptix.CommunicationDriver
+   Version: 2.1
+  32:
+   Uri: 'urn:FTOptix:CommunicationDriver:Net'
+   Module: FTOptix.CommunicationDriver.Net
+   Version: 2.1
  Statistics:
-  TotalNodeCount: 5195
-  Objects: 1108
+  TotalNodeCount: 5218
+  Objects: 1110
   ObjectTypes: 43
-  Variables: 4030
+  Variables: 4051
   VariableTypes: 2
   DataTypes: 2
   Methods: 10
-  References: 65
+  References: 72
   ReferenceTypes: 0
   Files: 43
  Nodes:

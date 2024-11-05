@@ -181,6 +181,30 @@ Children:
   Type: TIMER
   DataType: TIMER
   Children:
+  - Name: ACC
+    Type: RAEtherNetIPTag
+    DataType: Int32
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Program:MainProgram.Sin_timer.ACC"
+  - Name: DN
+    Type: RAEtherNetIPTag
+    DataType: Boolean
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Program:MainProgram.Sin_timer.DN"
+  - Name: EN
+    Type: RAEtherNetIPTag
+    DataType: Boolean
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Program:MainProgram.Sin_timer.EN"
   - Name: PRE
     Type: RAEtherNetIPTag
     DataType: Int32
@@ -189,30 +213,6 @@ Children:
       Type: BaseDataVariableType
       DataType: String
       Value: "Program:MainProgram.Sin_timer.PRE"
-  - Name: ACC
-    Type: RAEtherNetIPTag
-    DataType: Int32
-    Children:
-    - Name: SymbolName
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "ACC"
-  - Name: DN
-    Type: RAEtherNetIPTag
-    DataType: Boolean
-    Children:
-    - Name: SymbolName
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "DN"
-  - Name: EN
-    Type: RAEtherNetIPTag
-    DataType: Boolean
-    Children:
-    - Name: SymbolName
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "EN"
   - Name: TT
     Type: RAEtherNetIPTag
     DataType: Boolean
@@ -220,7 +220,7 @@ Children:
     - Name: SymbolName
       Type: BaseDataVariableType
       DataType: String
-      Value: "TT"
+      Value: "Program:MainProgram.Sin_timer.TT"
 - Name: Tag1
   Type: RAEtherNetIPTag
   DataType: Int32
@@ -245,3 +245,11 @@ Children:
     Type: BaseDataVariableType
     DataType: String
     Value: "Program:MainProgram.Output_Sen"
+- Name: Scale_Sen
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:MainProgram.Scale_Sen"

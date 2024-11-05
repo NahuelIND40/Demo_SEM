@@ -2,7 +2,6 @@ Name: Loggers
 Type: LoggersCategoryFolder
 Children:
 - Name: DataLogger1
-  Id: g=87ea606eeaafb964cae8a65c8ba39785
   Type: DataLogger
   Children:
   - Name: SamplingMode
@@ -21,32 +20,7 @@ Children:
   - Name: VariablesToLog
     Type: BaseObjectType
     Children:
-    - Name: VariableToSample1
-      Type: VariableToLog
-      DataType: BaseDataType
-      Children:
-      - Name: LastValue
-        Type: PropertyType
-        DataType: BaseDataType
-        AccessLevel: Read
-      - Name: Timestamp
-        Type: PropertyType
-        DataType: UtcTime
-        AccessLevel: Read
-      - Name: LastOperationCode
-        Type: PropertyType
-        DataType: StatusCode
-        AccessLevel: Read
-      - Name: DynamicLink
-        Type: DynamicLink
-        DataType: NodePath
-        Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/Tag1"
-        Children:
-        - Name: Mode
-          Type: BaseVariableType
-          DataType: DynamicLinkMode
-          Value: 2
-    - Name: VariableToSample2
+    - Name: Time
       Type: VariableToLog
       DataType: BaseDataType
       Children:
@@ -71,7 +45,7 @@ Children:
           Type: BaseVariableType
           DataType: DynamicLinkMode
           Value: 2
-    - Name: VariableToSample3
+    - Name: Value
       Type: VariableToLog
       DataType: BaseDataType
       Children:
@@ -90,7 +64,7 @@ Children:
       - Name: DynamicLink
         Type: DynamicLink
         DataType: NodePath
-        Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/Output_Sen"
+        Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/Scale_Sen"
         Children:
         - Name: Mode
           Type: BaseVariableType
@@ -103,7 +77,3 @@ Children:
     Type: PropertyType
     DataType: Boolean
     Value: true
-  - Name: SamplingPeriod
-    Type: PropertyType
-    DataType: Duration
-    Value: "0:00:00:0.0100000"

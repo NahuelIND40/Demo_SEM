@@ -9,7 +9,7 @@ Children:
   Value: 
    {
     "Type": 12,
-    "Dimensions": [66,3],
+    "Dimensions": [79,3],
     "Body": [
      "","en-US","es-ES",
      "Reboot","Reboot","Reiniciar",
@@ -76,6 +76,19 @@ Children:
      "AllowUserToConnect","Allow user \"{0}\" from IP address {1} to connect?","¿Permitir que el usuario \"{0}\" de la dirección IP {1} se conecte?",
      "RegisterToDomainDeviceID","Device ID:","ID de dispositivo:",
      "PLCaddress","PLC address","Dirección PLC",
-     "PLC","Auto (PLC)","Automático (PLC)"
+     "PLC","Auto (PLC)","Automático (PLC)",
+     "Timestamp","Timestamp","Sello de hora",
+     "TimedShelve","Timed Shelve","Suspensión temporizada",
+     "Acknowledge","Acknowledge","Reconocer",
+     "Acknowledge All","Acknowledge All","Reconocer todas",
+     "Active","Active","Activo",
+     "Confirm","Confirm","Confirmar",
+     "OneShotShelve","One-Shot Shelve","Suspensión única",
+     "Confirm All","Confirm All","Confirmar todas",
+     "SourceName","Source Variable","Variable de origen",
+     "Message","Message","Mensaje",
+     "Acked","Acked","Reconocido",
+     "Confirmed","Confirmed","Confirmado",
+     "Severity","Severity","Gravedad"
     ]
    }

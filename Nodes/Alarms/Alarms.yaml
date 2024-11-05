@@ -14,6 +14,18 @@ Children:
     Id: g=0a84ddf5011a9ce9fa9f698bf5e66836
     Type: BaseDataVariableType
     DataType: Double
+    Children:
+    - Name: DynamicLink
+      Id: g=841a6cfbc7df49686b831d9567281ffd
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/BOMBA2/MAX"
+      Children:
+      - Name: Mode
+        Id: g=136d56496a75c2aac01e9203efa85a70
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
   - Name: LastEvent
     Id: g=b43c7be23869b9ce068c8834a51ebd26
     Type: BaseDataVariableType
@@ -38,3 +50,8 @@ Children:
   - Class: Reference
     Target: ns=19;i=132
     Direction: Forward
+  - Name: Message
+    Id: g=d87b38f39a7771e9b707d96c3a900d90
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"es-ES","Text":"Tanque2 Lleno"}

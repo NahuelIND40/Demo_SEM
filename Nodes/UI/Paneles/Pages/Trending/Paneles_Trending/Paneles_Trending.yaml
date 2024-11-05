@@ -10,7 +10,7 @@ Children:
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 460.0
+    Value: 200.0
   - Name: Height
     Type: BaseVariableType
     DataType: Size
@@ -22,6 +22,7 @@ Children:
     - Name: Model
       Type: NodePointer
       DataType: NodeId
+      Value: "/Objects/Demo_Sem/DataStores/EmbeddedDatabase1"
       Children:
       - Name: ItemKind
         Type: PropertyType
@@ -32,15 +33,17 @@ Children:
     - Name: Query
       Type: BaseDataVariableType
       DataType: String
+      Value: "SELECT * FROM \"DataLogger1\""
     - Name: Columns
       Type: BaseObjectType
       Children:
-      - Name: ColumnaDeCuadrículaDeDatos1
+      - Name: Time
         Type: DataGridColumn
         Children:
         - Name: Title
           Type: BaseDataVariableType
           DataType: LocalizedText
+          Value: {"LocaleId":"es-ES","Text":"Time"}
         - Name: Width
           Type: BaseDataVariableType
           DataType: Size
@@ -58,12 +61,54 @@ Children:
         - Name: OrderBy
           Type: BaseDataVariableType
           DataType: NodePath
+          Value: "{Item}/Time"
         - Name: DataItemTemplate
           Type: DataGridLabelItemTemplate
           Children:
           - Name: Text
             Type: BaseDataVariableType
             DataType: LocalizedText
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Item}/Time"
+      - Name: Value
+        Type: DataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"LocaleId":"es-ES","Text":"Value"}
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: -1.0
+        - Name: Visible
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+        - Name: HeaderAlignment
+          Type: BaseDataVariableType
+          DataType: TextHorizontalAlignment
+        - Name: ContentAlignment
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+        - Name: OrderBy
+          Type: BaseDataVariableType
+          DataType: NodePath
+          Value: "{Item}/Value"
+        - Name: DataItemTemplate
+          Type: DataGridLabelItemTemplate
+          Children:
+          - Name: Text
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Item}/Value"
     - Name: SelectedItem
       Type: NodePointer
       DataType: NodeId
@@ -82,7 +127,7 @@ Children:
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 460.0
+      Value: 200.0
     - Name: Height
       Type: BaseVariableType
       DataType: Size
@@ -104,7 +149,7 @@ Children:
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 300.0
+    Value: 460.0
   - Name: Height
     Type: BaseVariableType
     DataType: Size
@@ -130,6 +175,21 @@ Children:
           Value: true
         - Name: Thresholds
           Type: BaseObjectType
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"es-ES","Text":"Amplitud"}
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "/Objects/Demo_Sem/CommDrivers/RAEtherNet_IPDriver1/PLC_Emu/Tags/Program&:MainProgram/Scale_Sen"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
     - Class: Reference
       Target: ns=5;i=1129
       Direction: Forward
@@ -160,11 +220,11 @@ Children:
       - Name: MinValue
         Type: BaseDataVariableType
         DataType: Size
-        Value: -1.0
+        Value: -10.0
       - Name: MaxValue
         Type: BaseDataVariableType
         DataType: Size
-        Value: -1.0
+        Value: 10.0
       - Name: AutoScale
         Type: BaseDataVariableType
         DataType: Boolean
@@ -193,9 +253,34 @@ Children:
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 400.0
+      Value: 250.0
     - Name: ReferenceTimeZone
       Type: BaseDataVariableType
       DataType: ReferenceTimeZone
       ModellingRule: Optional
       Value: 1
+    - Name: RefreshTime
+      Type: BaseDataVariableType
+      DataType: UInt32
+      ModellingRule: Optional
+      Value: 10
+    - Name: ButtonStyle
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Default"
+    - Name: ChartStyle
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Default"
+    - Name: LeftMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 30.0
+    - Name: TopMargin
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0

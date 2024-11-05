@@ -2,42 +2,12 @@ Name: DataStores
 Type: DataStoresCategoryFolder
 Children:
 - Name: EmbeddedDatabase1
-  Id: g=01eb8a812e294b09da3417ee70322558
+  Id: g=12b75cbea88ce001edf2d1f111b5e2ef
   Type: SQLiteStore
   Children:
   - Name: Tables
     Type: BaseObjectType
     Children:
-    - Name: SQLiteStoreTable1
-      Type: SQLiteStoreTable
-      Children:
-      - Class: Reference
-        Target: ns=27;i=12
-        Direction: Forward
-      - Class: Reference
-        Target: ns=27;i=15
-        Direction: Forward
-      - Class: Reference
-        Target: ns=27;i=21
-        Direction: Forward
-      - Class: Reference
-        Target: ns=27;i=20
-        Direction: Forward
-      - Name: Columns
-        Type: BaseObjectType
-        Children:
-        - Name: Timestamp
-          Type: StoreColumn
-          DataType: UtcTime
-        - Name: Tag1
-          Type: StoreColumn
-          DataType: Int32
-        - Name: Tag2
-          Type: StoreColumn
-          DataType: Float
-        - Name: Tag3
-          Type: StoreColumn
-          DataType: Float
     - Name: DataLogger1
       Type: SQLiteStoreTable
       Children:
@@ -56,21 +26,15 @@ Children:
       - Name: Columns
         Type: BaseObjectType
         Children:
+        - Name: Time
+          Type: StoreColumn
+          DataType: Float
+        - Name: Value
+          Type: StoreColumn
+          DataType: Float
         - Name: Timestamp
           Type: StoreColumn
           DataType: UtcTime
-        - Name: LocalTimestamp
-          Type: StoreColumn
-          DataType: DateTime
-        - Name: VariableToSample1
-          Type: StoreColumn
-          DataType: Int32
-        - Name: VariableToSample2
-          Type: StoreColumn
-          DataType: Float
-        - Name: VariableToSample3
-          Type: StoreColumn
-          DataType: Float
   - Class: Reference
     Target: ns=29;i=30
     Direction: Forward

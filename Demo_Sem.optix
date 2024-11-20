@@ -6,13 +6,13 @@ Project:
  Company: ''
  Copyright: ''
  FormatVersion: 1
- ProductVersion: 1.4
- CoreVersion: 3.0
+ ProductVersion: 1.5
+ CoreVersion: 4.0
  Dependencies:
   2:
    Uri: 'urn:FTOptix:Core:Net'
    Module: FTOptix.Core.Net
-   Version: 1.2
+   Version: 2.0
   3:
    Uri: 'urn:FTOptix:CoreBase'
    Module: FTOptix.CoreBase
@@ -24,23 +24,23 @@ Project:
   5:
    Uri: 'urn:FTOptix:UI'
    Module: FTOptix.UI
-   Version: 12.4
+   Version: 14.2
   6:
    Uri: 'urn:FTOptix:UI:Net'
    Module: FTOptix.UI.Net
-   Version: 12.4
+   Version: 14.2
   7:
    Uri: 'urn:FTOptix:HMIProject'
    Module: FTOptix.HMIProject
-   Version: 6.1
+   Version: 6.5
   8:
    Uri: 'urn:FTOptix:HMIProject:Net'
    Module: FTOptix.HMIProject.Net
-   Version: 4.4
+   Version: 4.8
   9:
    Uri: 'urn:FTOptix:NativeUI'
    Module: FTOptix.NativeUI
-   Version: 2.0
+   Version: 2.1
   10:
    Uri: 'urn:FTOptix:NativeUI:Net'
    Module: FTOptix.NativeUI.Net
@@ -56,7 +56,7 @@ Project:
   13:
    Uri: 'urn:FTOptix:NetLogic'
    Module: FTOptix.NetLogic
-   Version: 3.0
+   Version: 4.0
   14:
    Uri: 'urn:FTOptix:Retentivity'
    Module: FTOptix.Retentivity
@@ -76,7 +76,7 @@ Project:
   19:
    Uri: 'urn:FTOptix:Alarm'
    Module: FTOptix.Alarm
-   Version: 4.0
+   Version: 6.0
   20:
    Uri: 'urn:FTOptix:Alarm:Net'
    Module: FTOptix.Alarm.Net
@@ -84,19 +84,19 @@ Project:
   21:
    Uri: 'urn:FTOptix:RAEtherNetIP'
    Module: FTOptix.RAEtherNetIP
-   Version: 3.0
+   Version: 6.3
   22:
    Uri: 'urn:FTOptix:RAEtherNetIP:Net'
    Module: FTOptix.RAEtherNetIP.Net
-   Version: 2.1
+   Version: 2.2
   23:
    Uri: 'urn:FTOptix:WebUI'
    Module: FTOptix.WebUI
-   Version: 1.1
+   Version: 1.2
   24:
    Uri: 'urn:FTOptix:WebUI:Net'
    Module: FTOptix.WebUI.Net
-   Version: 1.1
+   Version: 1.2
   25:
    Uri: 'urn:FTOptix:DataLogger'
    Module: FTOptix.DataLogger
@@ -124,20 +124,20 @@ Project:
   31:
    Uri: 'urn:FTOptix:CommunicationDriver'
    Module: FTOptix.CommunicationDriver
-   Version: 2.1
+   Version: 3.0
   32:
    Uri: 'urn:FTOptix:CommunicationDriver:Net'
    Module: FTOptix.CommunicationDriver.Net
-   Version: 2.1
+   Version: 3.0
  Statistics:
-  TotalNodeCount: 5449
-  Objects: 1164
-  ObjectTypes: 43
-  Variables: 4228
+  TotalNodeCount: 5497
+  Objects: 1169
+  ObjectTypes: 44
+  Variables: 4269
   VariableTypes: 2
   DataTypes: 2
-  Methods: 10
-  References: 65
+  Methods: 11
+  References: 74
   ReferenceTypes: 0
   Files: 43
  Nodes:

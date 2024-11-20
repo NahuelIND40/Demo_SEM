@@ -336,6 +336,14 @@ Children:
         Type: BaseVariableType
         DataType: Boolean
         AccessLevel: Read
+      - Name: StyleSheet
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/StyleSheet"
   - Name: MaxNumberOfConnections
     Type: BaseDataVariableType
     DataType: UInt32

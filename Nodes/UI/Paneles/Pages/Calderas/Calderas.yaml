@@ -2441,6 +2441,21 @@ Children:
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
+- Name: Caldera3
+  Id: g=f28355c7375c30296ef30e95a371a731
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 300.0
+  - Name: Height
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 300.0
 - Name: CalderasPage
   Id: g=849220809589c83aa63fe733fa878070
   Supertype: Panel

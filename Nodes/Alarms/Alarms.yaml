@@ -55,3 +55,209 @@ Children:
     Type: BaseDataVariableType
     DataType: LocalizedText
     Value: {"LocaleId":"es-ES","Text":"Tanque2 Lleno"}
+  - Class: Reference
+    Target: ns=19;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=19;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=19;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=19;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=19;i=154
+    Direction: Forward
+  - Name: OffNormalAlarmTypeHandler1
+    Id: g=5c8fb9482358add5e0749d308bcf1dac
+    Type: EventHandler
+    Children:
+    - Name: ListenEventType
+      Id: g=0dec804ca80be8d4c5e633843f0ff1c4
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/EventTypes/BaseEventType/ConditionType/AcknowledgeableConditionType/AlarmConditionType/DiscreteAlarmType/OffNormalAlarmType"
+    - Name: MethodsToCall
+      Id: g=65f2d54d6ea772575ac0c8a04f5d6c38
+      Type: BaseObjectType
+      Children:
+      - Name: MethodContainer1
+        Id: g=c8f4c3cc556ea3f59c559958d4102596
+        Type: BaseObjectType
+        Children:
+        - Name: ns=3;ObjectPointer
+          Id: g=8fb52ad128b06b23e5ed98c3aaef529b
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Id: g=e6600e986a0a29dd26f457b594815f49
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Id: g=10c51cfcb23ff9d236d6bf720f992abf
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../../../NetLogic/TelegramNotification@NodeId"
+            Children:
+            - Name: Mode
+              Id: g=cd725f7d19b55597afab512d353e828d
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              Value: 2
+        - Name: ns=3;Method
+          Id: g=8773610eb8b644d49259657f5fb14a28
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Method1"
+    - Name: EventArguments
+      Id: g=7cc6457068e59d253da0bc61d818b130
+      Type: OffNormalAlarmType
+      Children:
+      - Name: NormalState
+        Id: g=000de9e2fd168bcefd31bcdef970183d
+        Type: PropertyType
+        DataType: NodeId
+      - Name: EnabledState
+        Id: g=7618605713dd9b620313a0679bb9451f
+        Type: TwoStateVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: Id
+          Id: g=760c3f8b9fbae54431be64f79496787e
+          Type: PropertyType
+          DataType: Boolean
+        - Name: ActiveState
+          Id: g=5d71156d093c052062ce3b592bd6820e
+          Type: TwoStateVariableType
+          DataType: LocalizedText
+          ReferenceType: HasTrueSubState
+          Children:
+          - Name: Id
+            Id: g=f30b69b2fce0cda229342792f1996bd8
+            Type: PropertyType
+            DataType: Boolean
+      - Name: ActiveState
+        Id: g=f9b0078132f585279e751a9a59c8e509
+        Type: TwoStateVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: Id
+          Id: g=20461c36433e31bc6c2ea53080ccc7f0
+          Type: PropertyType
+          DataType: Boolean
+      - Name: InputNode
+        Id: g=f752dca913b807265f73555cb4c2cbc5
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SuppressedOrShelved
+        Id: g=73cc699e3d70d99e0effbc8909bdb204
+        Type: PropertyType
+        DataType: Boolean
+      - Name: AckedState
+        Id: g=ce612fedcf5f6828b63b437e1cf7e534
+        Type: TwoStateVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: Id
+          Id: g=667bbe2b8af47c29b7ebfa89bf3bd967
+          Type: PropertyType
+          DataType: Boolean
+      - Class: Reference
+        Target: ns=0;i=9111
+        Direction: Forward
+      - Name: ConditionClassId
+        Id: g=a8e32dd1978c22bec84db1757c8e5b77
+        Type: PropertyType
+        DataType: NodeId
+      - Name: ConditionClassName
+        Id: g=d0a22caed6d873fc3258752af5361a97
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: ConditionName
+        Id: g=d8bc6e26cf9eada1ce5636b52604f37e
+        Type: PropertyType
+        DataType: String
+      - Name: BranchId
+        Id: g=626d01ee25289e5b5624e847bb5edf25
+        Type: PropertyType
+        DataType: NodeId
+      - Name: Retain
+        Id: g=84fb32bd9ed0763cbbf70b6fcc098a2d
+        Type: PropertyType
+        DataType: Boolean
+      - Name: Quality
+        Id: g=989fc55b7f7cc73052eebf420faa8275
+        Type: ConditionVariableType
+        DataType: StatusCode
+        Children:
+        - Name: SourceTimestamp
+          Id: g=d89637b0ac96412a685d766aa752e7e4
+          Type: PropertyType
+          DataType: UtcTime
+      - Name: LastSeverity
+        Id: g=970064b64e3355e3a745712e92426c3b
+        Type: ConditionVariableType
+        DataType: UInt16
+        Children:
+        - Name: SourceTimestamp
+          Id: g=36166b696e60ff3f4d1da932efef50b2
+          Type: PropertyType
+          DataType: UtcTime
+      - Name: Comment
+        Id: g=54f73e716ee350bc68184356c6cc4499
+        Type: ConditionVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: SourceTimestamp
+          Id: g=9a4834c7f374dac2833bc03019b0eef5
+          Type: PropertyType
+          DataType: UtcTime
+      - Name: ClientUserId
+        Id: g=9f397ecd6460d078a0516a5b736b698d
+        Type: PropertyType
+        DataType: String
+      - Class: Reference
+        Target: ns=0;i=9028
+        Direction: Forward
+      - Class: Reference
+        Target: ns=0;i=9027
+        Direction: Forward
+      - Class: Reference
+        Target: ns=0;i=9029
+        Direction: Forward
+      - Name: EventId
+        Id: g=2f974c67658e3b5f1a04fb69cb7fdfd2
+        Type: PropertyType
+        DataType: ByteString
+      - Name: EventType
+        Id: g=2f3454a35c715eea176c40b078dbe23d
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceNode
+        Id: g=084e9acf8e544a1f99256bb625c9de03
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceName
+        Id: g=f10e3d40e6544fd0c29d1feefaf02627
+        Type: PropertyType
+        DataType: String
+      - Name: Time
+        Id: g=e293e79f08c488386a3e349f02c78152
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: ReceiveTime
+        Id: g=5d440222739e1fbe2b6b981ab87cab8d
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: Message
+        Id: g=2324c0ef5994dc41977e6aefa5284857
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: Severity
+        Id: g=4ec13cc9b2c39ab77c1635843bbb2f8f
+        Type: PropertyType
+        DataType: UInt16
